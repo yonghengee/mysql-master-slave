@@ -29,6 +29,34 @@
 
 ###安装完毕
 
+###配置Master
+`apt-get update` && `apt-get install vim`
+先进入容器中装载vim进行文本编辑
+
+`cd etc/mysql/`
+进入mysql配置目录，查看my.cnf
+ `vim my.cnf`
+![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573799709.jpg)
+
+在引用的任意文件中(或者新加一个文件)
+加入以下参数
+![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573799984.jpg)
+
+退出。
+重启mysql `service mysql restart` 
+这时会退出docker容器，并且需要重新启动mysql
+`docker start mysql-test`
+
+###配置slave用户
+进入docker容器的mysql中，执行
+`CREATE USER 'slave'@'%' IDENTIFIED BY '000000';`
+
+`GRANT REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'slave'@'%';`
+授予用户 slave ,REPLICATION SLAVE权限和REPLICATION CLIENT权限，用于在从库同步主库数据。
+
+
+
+
 
 
 
