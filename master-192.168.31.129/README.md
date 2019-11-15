@@ -40,6 +40,7 @@
 
 在引用的任意文件中(或者新加一个文件)
 加入以下参数
+
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573799984.jpg)
 
 退出。
