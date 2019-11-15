@@ -2,7 +2,7 @@
 ###使用docker安装mysql
 `docker images` 查看当前docker安装的镜像
 
-![docker images](https://github.com/yonghengee/mysql-master-slave/tree/master/master-192.168.31.129/1573798160.png)
+![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573798160.png)
 
 `docker pull mysql:5.7`这里使用5.7的mysql，其他版本请自行安装
 
