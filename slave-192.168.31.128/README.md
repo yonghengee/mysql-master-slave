@@ -1,5 +1,6 @@
 # slave设置
 从库的mysql安装跟master一样。
+
 基于docker进行安装
 
 只要能连接上即可
@@ -12,7 +13,9 @@
 
 
 ### 查看从库同步状态
+
 进入slave-mysql中
+
 执行  `show slave status \G;`
 
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/slave-192.168.31.128/1573801845.png)
