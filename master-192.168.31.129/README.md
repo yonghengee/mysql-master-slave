@@ -1,5 +1,5 @@
-#master设置
-###使用docker安装mysql
+# master设置
+### 使用docker安装mysql
 `docker images` 查看当前docker安装的镜像
 
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573798160.png)
@@ -24,12 +24,12 @@
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573799221.jpg)
 
 
-###使用navicat查看是否可以连接
+### 使用navicat查看是否可以连接
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/master-192.168.31.129/1573799295.jpg)
 
-###安装完毕
+### 安装完毕
 
-###配置Master
+### 配置Master
 `apt-get update` && `apt-get install vim`
 先进入容器中装载vim进行文本编辑
 
@@ -47,7 +47,7 @@
 这时会退出docker容器，并且需要重新启动mysql
 `docker start mysql-test`
 
-###配置slave用户
+### 配置slave用户
 进入docker容器的mysql中，执行
 `CREATE USER 'slave'@'%' IDENTIFIED BY '000000';`
 

@@ -1,24 +1,24 @@
-#slave设置
+# slave设置
 从库的mysql安装跟master一样。
 基于docker进行安装
 
 只要能连接上即可
 
-##slave my.cnf配置
+## slave my.cnf配置
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/slave-192.168.31.128/1573800577.jpg)
 
 局域网中，server-id 是作为唯一标识(若一台机器多个mysql，则server-id也不同)
 
 
- ###查看从库同步状态
+ ### 查看从库同步状态
  进入slave-mysql中
  执行  `show slave status \G;`
  ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/slave-192.168.31.128/1573801845.png)
 SlaveIORunning 和 SlaveSQLRunning 都是No
 未开启主从复制
 
-##开启从库复制
-###进入master获取File和position值
+## 开启从库复制
+### 进入master获取File和position值
 进入master的mysql命令行，执行
 `show master status;`
 ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/slave-192.168.31.128/1573800977.jpg)
@@ -39,7 +39,7 @@ SlaveIORunning 和 SlaveSQLRunning 都是No
  
  
  
- ###查看从库同步状态
+ ### 查看从库同步状态
  进入slave-mysql中，执行
  `show slave status \G;`
  **\G**：格式化
@@ -47,7 +47,7 @@ SlaveIORunning 和 SlaveSQLRunning 都是No
  会发现刚刚的 **SlaveIORunning** 和 **SlaveSQLRunning** 都变成 **Yes**
  
  
- ##测试
+ ## 测试
  在129的主库中，添加一个名为test的数据库，创建一个名为test的表，插入一条记录
  ![docker images](https://github.com/yonghengee/mysql-master-slave/blob/master/slave-192.168.31.128/1573802080.jpg)
  
